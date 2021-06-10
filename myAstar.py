@@ -125,7 +125,7 @@ def plot_map(m, m_type):
         plt.title('寻路结果图')
     elif m_type == 'begin':
         plt.title('初始地图')
-    plt.savefig('%s.jpg' % p)
+    plt.savefig('result/%s.jpg' % p)
     p = p+1
     plt.show()
 
