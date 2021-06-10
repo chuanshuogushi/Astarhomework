@@ -20,7 +20,7 @@ random_map = False  # 是否随机地图
 if random_map is True:
     width = 20
     height = 20
-    obstacle_num = 100  #170
+    obstacle_num = 100  # 170
     seed = 18374288
     my_map = create_random_map(width, height, obstacle_num, seed)  # 选择随机地图
     f_x, f_y = 0, 0  # first和destination坐标

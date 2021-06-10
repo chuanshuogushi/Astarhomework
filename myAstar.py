@@ -22,9 +22,9 @@ class Node:
         if abs(dad.x-self.x)+abs(dad.y-self.y) == 1:
             self.g = dad.g+1
         else:
-            self.g = dad.g+1.414
+            self.g = dad.g+1.5
         # self.g = #dad.g + 1  # 深度加一
-        self.h = abs(self.x - final_node.x) + abs(self.y - final_node.y)  # 曼哈顿距离
+        self.h = ((self.x - final_node.x)**2 + (self.y - final_node.y)**2)**0.5  # 欧氏距离
         self.f = self.g + self.h
 
     def same_loc(self, x, y):
@@ -56,7 +56,7 @@ def A_star(s_node, f_node):
         for near_node in near_nodes:  # 计算f，添加父子关系，放入open表中
             near_node.cal_f(now_node, f_node)
             open_list.append(near_node)
-            print_result(near_node,'result')
+            print_result(near_node, 'result')  # 绘制搜索过程
         for near_node in open_list:  # 查询是否搜到目标点
             if near_node.same_loc(f_node.x, f_node.y):
                 return near_node
